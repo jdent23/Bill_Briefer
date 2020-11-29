@@ -1,0 +1,13 @@
+https://docs.openstates.org/en/latest/api/v3/index.html
+https://openstates.org/accounts/profile/
+
+API Key
+494f651d-1f8b-41be-a0c4-756626bbcca3
+Tier
+Default (new user)
+GraphQL Limits
+500 daily requests
+1 requests/sec
+API v1 Limits
+100 daily requests
+1 requests/sec
