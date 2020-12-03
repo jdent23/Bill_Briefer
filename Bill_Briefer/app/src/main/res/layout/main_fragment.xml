@@ -5,16 +5,88 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.MainFragment">
+    tools:context=".ui.main.MainFragment"
+    android:padding="50dp">
 
     <TextView
-        android:id="@+id/message"
+        android:id="@+id/looking_for_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MainFragment"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Looking for legislation"
+        android:textSize="25dp"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/state_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="in the state of:"
+        android:textSize="25dp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/looking_for_tv"/>
+
+    <LinearLayout
+        android:id="@+id/state_s_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/state_tv"
+        android:background="@color/green"
+        android:gravity="center"
+        android:layout_margin="10dp">
+
+        <Spinner
+            android:id="@+id/state_s"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="in the state of:"
+            android:backgroundTint="@color/black"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/sort_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sorted by:"
+        android:textSize="25dp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/state_s_bg" />
+
+    <LinearLayout
+        android:id="@+id/sort_s_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sort_tv"
+        android:background="@color/green"
+        android:gravity="center"
+        android:layout_margin="10dp">
+
+        <Spinner
+            android:id="@+id/sort_s"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="in the state of:"
+            android:backgroundTint="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sort_tv"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/query_b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Query"
+        android:textSize="30dp"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/green"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sort_s_bg"
+        android:layout_marginTop="20dp"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

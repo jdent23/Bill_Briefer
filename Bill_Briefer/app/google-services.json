@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "176087448998",
+    "firebase_url": "https://billbriefer.firebaseio.com",
+    "project_id": "billbriefer",
+    "storage_bucket": "billbriefer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:176087448998:android:6b484c3f18113665042367",
+        "android_client_info": {
+          "package_name": "edu.utap.billbriefer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "176087448998-ecmms740kn5koh0bprnli75u9tuth7ri.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.utap.billbriefer",
+            "certificate_hash": "e6dcdcd712430ba5955d52c29edee9ff77cc2e35"
+          }
+        },
+        {
+          "client_id": "176087448998-igukh2udvc4lvggmu79p6k6omjaq8ao4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3kwIQONN00VeNBNtdxVoWWJc6NNhB8Y4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "176087448998-igukh2udvc4lvggmu79p6k6omjaq8ao4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
