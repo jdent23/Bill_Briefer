@@ -1,0 +1,2 @@
+Just load into Android Studio and click the Play button.
+Nothing else required.
