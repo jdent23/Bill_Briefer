@@ -211,12 +211,11 @@ class BillViewFragment : Fragment() {
                         }
 
                         new_voter.setOnClickListener() {
-                            CoroutineScope(Dispatchers.IO).launch {
-                                Log.d(
-                                    TAG,
-                                    "Sending request: ${bill!!.votes_holder[0].votes[i].voter.id}"
-                                )
-                                viewModel.searchPerson(bill!!.votes_holder[0].votes[i].voter.id)
+
+                            if((activity as MainActivity?)?.check_network() == true) {
+                                CoroutineScope(Dispatchers.IO).launch {
+                                    viewModel.searchPerson(bill!!.votes_holder[0].votes[i].voter.id)
+                                }
                             }
                         }
                         voters!!.addView(new_voter)

@@ -6,11 +6,14 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.media.Image
+import android.net.ConnectivityManager
+import android.net.NetworkInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.activity.viewModels
 import androidx.lifecycle.ViewModel
@@ -71,5 +74,17 @@ class MainActivity : AppCompatActivity() {
         } else {
             back_b!!.setImageResource(R.color.green)
         }
+    }
+
+    fun check_network(): Boolean {
+        val conn_manager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val network_info = conn_manager.getNetworkInfo(conn_manager.activeNetwork)
+
+        if((network_info == null) || (network_info.state != NetworkInfo.State.CONNECTED)) {
+            Toast.makeText(applicationContext, "Connect to network.", Toast.LENGTH_SHORT).show()
+            return false
+        }
+
+        return true
     }
 }

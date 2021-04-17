@@ -61,18 +61,32 @@ class BillSearchFragment : Fragment() {
             next_page_b.isClickable = false
             next_page_b.visibility = View.INVISIBLE
             rv!!.scrollToPosition(0)
-            CoroutineScope(Dispatchers.IO).launch {
-                viewModel.getNextPage()
+
+            if((activity as MainActivity?)?.check_network() == true) {
+                CoroutineScope(Dispatchers.IO).launch {
+                    viewModel.getNextPage()
+                }
+            } else {
+                next_page_b.isClickable = true
+                next_page_b.visibility = View.VISIBLE
             }
+
         }
 
         prev_page_b.setOnClickListener() {
             prev_page_b.isClickable = false
             prev_page_b.visibility = View.INVISIBLE
             rv!!.scrollToPosition(0)
-            CoroutineScope(Dispatchers.IO).launch {
-                viewModel.getPrevPage()
+
+            if((activity as MainActivity?)?.check_network() == true) {
+                CoroutineScope(Dispatchers.IO).launch {
+                    viewModel.getNextPage()
+                }
+            } else {
+                prev_page_b.isClickable = true
+                prev_page_b.visibility = View.VISIBLE
             }
+
         }
 
         viewModel.observePage().observe(viewLifecycleOwner, Observer {
@@ -117,8 +131,6 @@ class BillSearchFragment : Fragment() {
 
     fun set_bill_viewer() {
         viewModel.observeViewBill().observe(viewLifecycleOwner, Observer {
-            Log.d(TAG, "Here at billView init")
-            Log.d(TAG, it.toString())
             if(it != null && it.lock != null && it.view_bill != null && it.lock != true) {
                 display_bill()
             }

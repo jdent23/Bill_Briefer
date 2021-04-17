@@ -74,15 +74,18 @@ class MainFragment : Fragment() {
         query_b!!.setOnClickListener() {
             query_b!!.isClickable = false
             query_b!!.visibility = View.INVISIBLE
-            Log.d(TAG, "Query button clicked")
             val jurisdiction = state_s!!.selectedItem.toString()
             val sort = sort_s!!.selectedItem.toString()
 
-            CoroutineScope(Dispatchers.IO).launch {
-                viewModel.searchBills(jurisdiction, sort)
-                display_bill_search()
+            if((activity as MainActivity?)?.check_network() == true) {
+                CoroutineScope(Dispatchers.IO).launch {
+                    viewModel.searchBills(jurisdiction, sort)
+                    display_bill_search()
+                }
+            } else {
+                query_b!!.isClickable = true
+                query_b!!.visibility = View.VISIBLE
             }
-
         }
     }
 
